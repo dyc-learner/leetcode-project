@@ -1,0 +1,13 @@
+#include <vector>
+#include<algorithm>
+using namespace std;
+class Solution {
+public:
+    bool isRectangleOverlap(vector<int>& rec1, vector<int>& rec2) {
+      int x_left=max(rec1[0],rec2[0]);
+      int y_bottom=max(rec1[1],rec2[1]);
+      int x_right=min(rec1[2],rec2[2]);
+      int y_top=min (rec1[3],rec2[3]);
+      return (x_left<x_right)&&(y_bottom<y_top);
+    }
+};//正向思维，围成的小矩形存在；注意变量名中不能有减号-；使用max，min函数时加头文件<algorithm>
