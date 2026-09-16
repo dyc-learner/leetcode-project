@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int gcd(int a, int b) {
+	while (b != 0) {
+		int r = a % b;
+		a = b;
+		b = r;
+	}
+	return a;
+}
+
+int main() {
+	int a, b;
+	scanf("%d%d", &a, &b);
+	int g = gcd(a, b);
+	int lcm = a / g * b;
+	printf("%d", lcm);
+}
+//返回值类型 函数名(形参1类型 形参1名, 形参2类型 形参2名,...)
+{
+    //函数体：执行的代码
+    return 返回值;   //返回结果给调用处
+}
