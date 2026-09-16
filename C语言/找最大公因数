@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+	int a, b, r, gcd, lcm, c, d;
+	scanf("%d%d", &a, &b);
+	c = a;
+	d = b;
+	while (b != 0) {
+		r = a % b;
+		a = b;
+		b = r;
+	}
+	gcd = a;
+	lcm = c / gcd * d;
+	printf("%d", lcm);
+}//辗转相除法找最大公因数
