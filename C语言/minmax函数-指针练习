@@ -1,0 +1,23 @@
+#include <stdio.h>
+void minmax(int arr[], int len, int *min, int *max);
+
+int main() {
+	int arr[] = {13, 15, 97, 2, 65, 263, 4, 32, 54, 48, 5, 21};
+	int min, max;
+	minmax(arr, sizeof(arr) / sizeof(arr[0]), &min, &max);
+	printf("min=%d,max=%d", min, max);
+}
+
+void minmax(int arr[], int len, int *min, int *max) {
+	*min = *max = arr[0];
+	for (int i = 1; i < len; i++) {
+		if (arr[i] > *max) {
+			*max = arr[i];
+		}
+		if (arr[i] < *min) {
+			*min = arr[i];
+		}
+	}
+}//1，&min传输地址，&min解引用，直接在minmax函数里改变原变量的值；
+//2，函数内部的参数名无任何意义，只需和外部对应即可
+//3,调用函数时直接写函数名，不要写void（苦笑）
