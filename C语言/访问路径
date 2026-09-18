@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+	int k, p, n, m, n1, m1, temp;
+	scanf("%d%d%d", &n, &m, &k);
+	p = k - 1;
+	n1 = p / m + 1;
+//	printf("%d\n", n1);
+	temp = p % m + 1;
+//	printf("%d\n", temp);
+	if (n1 % 2 == 1)
+		m1 = temp;
+	else
+		m1 = m - temp + 1;
+	printf("%d %d\n", n1, m1);
+}
+//用除法和取模定位，考虑边界情况可知为什么要取p=k-1，分奇偶定位
